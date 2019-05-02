@@ -19,12 +19,14 @@ const First = props => {
                 placeholder="Full Name"
                 style={styles.textField}
                 onChange={handleNameChanged.bind(this)}
+                value={props.name}
             />
             <input
                 type="text"
                 placeholder="Description"
                 style={styles.textField}
                 onChange={handleDescriptionChanged.bind(this)}
+                value={props.description}
             />
         </div>
     );
