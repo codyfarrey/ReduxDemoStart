@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const Second = props => {
     return (
         <div style={styles.container}>
-            <h1>Full Name</h1>
-            <p>A quick description on this persons.</p>
+            <h1>{props.name}</h1>
+            <p>{props.description}</p>
         </div>
     );
 };
@@ -21,5 +22,11 @@ const styles = {
     }
 };
 
+const mapStateToProps = state => {
+    return {
+        name: state.card.name,
+        description: state.card.description,
+    };
+};
 
-export default Second;
+export default connect(mapStateToProps)(Second);
